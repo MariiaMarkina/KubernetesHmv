@@ -22,22 +22,25 @@ spec:
       registryCredential = 'dockerhubCred'
       dockerImage = ""
     }   
-    tools {nodejs "nodejs 14.10.1"}
+
     
     stages {
         stage('build') {
+            tools {nodejs "nodejs 14.10.1"}
             steps {  
                 git 'https://github.com/americans007/react-app'
                 sh 'npm install'
                 sh 'npm run build'
                 sh 'npm install -g serve'
+                }
+        stage('create image') {
+            steps {  
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
                   docker.withRegistry('', registryCredential) 
                   dockerImage.push()
                 }
-            
-                sh 'serve -s build'
+                // sh 'serve -s build'
                // sh 'sleep 600'
             }
         }
