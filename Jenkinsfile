@@ -8,7 +8,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: alpine
+    image: ubuntu
     command:
     - sleep
     args:
