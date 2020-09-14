@@ -7,7 +7,7 @@ pipeline {
 //spec:
 // containers:
   - name: shell
-    image: alpine
+    image: bitnami-docker-node
     command:
     - sleep
     args:
