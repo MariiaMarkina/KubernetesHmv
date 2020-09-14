@@ -33,7 +33,7 @@ spec:
                 sh 'npm install -g serve'
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
-                  docker.withRegistry('', registryCredential) {
+                  docker.withRegistry('', registryCredential) 
                   dockerImage.push()
                 }
             
