@@ -17,21 +17,11 @@ spec:
         }
     }
     
-   // agent{
-    //    docker{
-      //      image 'ubuntu'
-        //    label 'dockeragent'
-          //  registyUrl 'https://hub.docker.com/repository/docker/mariiamarkina/devopshomework'
-           // registryCredentialsId 'dockerhubCred'
-          //  comit-on-success 'true'
-         //   push-on-success 'true'
-      //  }
-   // }
-    environment {
-      registry = "mariiamarkina/devopshomework"
-      registryCredential = 'dockerhubCred'
-      dockerImage = ""
-    }   
+ //   environment {
+  //    registry = "mariiamarkina/devopshomework"
+   //   registryCredential = 'dockerhubCred'
+   //   dockerImage = ""
+ //   }   
     tools {nodejs "nodejs 14.10.1"}
     
     stages {
