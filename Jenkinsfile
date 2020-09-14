@@ -37,7 +37,7 @@ spec:
         }
         stage('create image') {
             steps { 
-                sh 'apt-get install gnupg -y'
+                sh 'apt-get install -y gnupg'
                 sh 'apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
                 sh "apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'"
                 sh 'apt-get update'
