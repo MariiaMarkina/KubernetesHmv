@@ -2,10 +2,10 @@ pipeline {
     agent {
         kubernetes {
             yaml '''
-// apiVersion: v1
-//kind: Pod
-//spec:
-// containers:
+apiVersion: v1
+kind: Pod
+spec:
+containers:
   - name: shell
     image: ubuntu
     command:
