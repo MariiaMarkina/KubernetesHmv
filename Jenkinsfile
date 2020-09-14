@@ -22,7 +22,6 @@ spec:
       registryCredential = 'dockerhubCred'
       dockerImage = ""
     }   
-    def docker = "docker"
     
     stages {
         stage('build') {
@@ -35,6 +34,7 @@ spec:
                 }
         }
         stage('create image') {
+            tools {docker "docker"}
             steps {  
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
