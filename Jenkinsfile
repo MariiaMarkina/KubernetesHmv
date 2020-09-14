@@ -8,7 +8,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: bitnami/kubectl
+    image: alpine
     command:
     - sleep
     args:
