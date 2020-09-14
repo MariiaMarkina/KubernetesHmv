@@ -22,7 +22,7 @@ spec:
       registryCredential = 'dockerhubCred'
       dockerImage = ""
     }   
-
+    def docker = "docker"
     
     stages {
         stage('build') {
