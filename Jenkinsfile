@@ -8,7 +8,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: bitnami-docker-node
+    image: bitnami/kubectl
     command:
     - sleep
     args:
