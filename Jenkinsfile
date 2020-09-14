@@ -8,7 +8,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: ubuntu
+    image: bitnami-docker-node
     command:
     - sleep
     args:
