@@ -7,7 +7,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: ubuntu
+    image: docker
     command:
     - sleep
     args:
@@ -35,7 +35,6 @@ spec:
         }
         stage('create image') {
             steps { 
-                sh 'apt-get install docker.io'
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
                   docker.withRegistry('', registryCredential) 
