@@ -33,6 +33,7 @@ spec:
                 sh 'npm run build'
                 sh 'npm install -g serve'
                 }
+        }
         stage('create image') {
             steps {  
                 script {
