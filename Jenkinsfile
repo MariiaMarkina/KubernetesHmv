@@ -34,8 +34,7 @@ spec:
                 }
         }
         stage('create image') {
-            steps {  
-                sh 'apt-get install ca-certificates -y' 
+            steps { 
                 sh 'apt-get install docker.io'
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
