@@ -27,6 +27,7 @@ spec:
         stage('build') {
             tools {nodejs "nodejs 14.10.1"}
             steps {  
+                sh 'npm install -g npm'
                 git 'https://github.com/americans007/react-app'
                 sh 'npm install'
                 sh 'npm run build'
