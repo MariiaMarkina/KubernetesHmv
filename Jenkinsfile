@@ -31,10 +31,13 @@ spec:
                 sh 'npm install'
                 sh 'npm run build'
                 sh 'npm install -g serve'
-                sh 'serve -s build'
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
+                  docker.withRegistry('', registryCredential) {
+                  dockerImage.push()
                 }
+            
+                sh 'serve -s build'
                // sh 'sleep 600'
             }
         }
