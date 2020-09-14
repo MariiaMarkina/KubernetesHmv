@@ -7,7 +7,7 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: docker
+    image: node:6-alpine
     command:
     - sleep
     args:
@@ -27,7 +27,6 @@ spec:
         stage('build') {
             tools {nodejs "nodejs 14.10.1"}
             steps {  
-                sh 'npm install -g npm'
                 git 'https://github.com/americans007/react-app'
                 sh 'npm install'
                 sh 'npm run build'
