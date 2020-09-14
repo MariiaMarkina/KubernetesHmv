@@ -44,7 +44,7 @@ spec:
                 sh "apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'"
                 sh 'apt-get update'
                 sh 'apt-cache policy docker-engine'
-                sh 'apt-get install -y docker-engine'
+                sh 'apt-get install -y docker.io'
                 
                 script {
                   dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/')
