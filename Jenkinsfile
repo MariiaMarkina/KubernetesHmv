@@ -1,3 +1,4 @@
+// Uses Declarative syntax to run commands inside a container.
 pipeline {
     agent {
         kubernetes {
@@ -5,7 +6,7 @@ pipeline {
 apiVersion: v1
 kind: Pod
 spec:
-containers:
+  containers:
   - name: shell
     image: ubuntu
     command:
@@ -13,6 +14,7 @@ containers:
     args:
     - infinity
 '''
+   
             defaultContainer 'shell'
         }
     }
