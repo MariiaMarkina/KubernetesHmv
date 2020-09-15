@@ -66,16 +66,16 @@ spec:
                     git 'http://github.com/MariiaMarkina/KubernetesHmv'
                     sh 'docker build -t mariiamarkina/devopshomework:kubepipeline /home/jenkins/agent/workspace/Homework'
                //     withDockerRegistry([ credentialsId: "dockerhubCred", url: "" ]) {
-               //       sh 'docker push  mariiamarkina/devopshomework:kubepipeline'
+                    sh 'docker push  mariiamarkina/devopshomework:kubepipeline'
                 //        }  
                         
                         
-                      script {
+                //      script {
                 //    docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                 //    dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
-                        docker.withRegistry('https://registry.hub.docker.com/', dockerhubCred) 
+              //          docker.withRegistry('https://registry.hub.docker.com/', dockerhubCred) 
               //          dockerImage.push()
-                       }
+              //         }
                 
                  
                 }
