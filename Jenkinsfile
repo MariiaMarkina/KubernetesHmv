@@ -64,10 +64,10 @@ spec:
               //    sh 'docker ps'
                 //  sh 'sleep 3000'
                   script {
+                    docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                     dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
-                  }
-                   // docker.withRegistry('', registryCredential) 
-                   // dockerImage.push()
+                    docker.withRegistry('', registryCredential) 
+                    dockerImage.push()
                   //}
                 }
                 // sh 'serve -s build'
