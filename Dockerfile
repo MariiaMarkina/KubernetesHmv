@@ -1,6 +1,5 @@
 FROM ubuntu
 MAINTAINER mariia markina <MariaMarkinaV@gmail.com>
-RUN apt-get update
-RUN apt-get install -y apache2
-COPY ./build/* /var/www/html
-CMD ["apache2", "-g", "daemon off;"]
+RUN apt-get update && apt-get install nginx -y 
+COPY ./build/* /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
