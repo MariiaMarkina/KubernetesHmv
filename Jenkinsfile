@@ -64,8 +64,8 @@ spec:
                     git 'http://github.com/MariiaMarkina/KubernetesHmv'
                     sh 'docker build -t mariiamarkina/devopshomework:kubepipeline /home/jenkins/agent/workspace/Homework'
                //     withDockerRegistry([ credentialsId: "dockerhubCred", url: "" ]) {
-               //     sh 'docker push  mariiamarkina/devopshomework:kubepipeline'
-                        
+               //       sh 'docker push  mariiamarkina/devopshomework:kubepipeline'
+                //        }  
                         
                         
                     script {
@@ -74,7 +74,7 @@ spec:
                     docker.withRegistry('', registryCredential) 
                     dockerImage.push()
                     }
-                    }
+                
                         
                  
                 }
