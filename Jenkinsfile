@@ -42,7 +42,7 @@ spec:
     environment {
       registry = "mariiamarkina/devopshomework"
       registryCredential = 'dockerhubCred'
-      dockerImage = ''
+      dockerImagemy = ""
     }
     
     stages {
@@ -64,7 +64,7 @@ spec:
               //    sh 'docker ps'
                 //  sh 'sleep 3000'
                   script {
-                    dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
+                    dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                   }
                    // docker.withRegistry('', registryCredential) 
                    // dockerImage.push()
