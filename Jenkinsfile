@@ -60,15 +60,18 @@ spec:
         stage('create image') {
             steps { 
                 container('docker'){
-                  git 'http://github.com/MariiaMarkina/KubernetesHmv'
-              //    sh 'docker ps'
-                //  sh 'sleep 3000'
-                  script {
-                    docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
-                    dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
-                    docker.withRegistry('', registryCredential) 
-                    dockerImage.push()
+                    git 'http://github.com/MariiaMarkina/KubernetesHmv'
+                    sh 'docker build -t mariiamarkina/devopshomework:kubepipeline_${env.BUILD_ID}" /home/jenkins/agent/workspace/Homework/'
+                    withDockerRegistry([ credentialsId: "dockerhubCred", url: "https://registry.hub.docker.com/" ]) {
+                    sh 'docker push  mariiamarkina/devopshomework:kubepipeline_${env.BUILD_ID}"'
                     }
+                        
+                 // script {
+                //    docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
+                //    dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
+                //    docker.withRegistry('', registryCredential) 
+                //    dockerImage.push()
+               //     }
                 }
                 // sh 'serve -s build'
                // sh 'sleep 600'
