@@ -17,9 +17,9 @@ spec:
     image: ubuntu
     command: ["cat"]
     tty: true
-    volumeMounts:
-    - name: repository
-      mountPath: /root/workdir
+//    volumeMounts:
+//   - name: repository
+//      mountPath: /root/workdir
   - name: docker
     image: docker:18.09.2
     command: ["cat"]
@@ -28,9 +28,9 @@ spec:
     - name: docker-sock
       mountPath: /var/run/docker.sock
   volumes:
-  - name: repository
-    persistentVolumeClaim:
-      claimName: repository
+//  - name: repository
+//    persistentVolumeClaim:
+//      claimName: repository
   - name: docker-sock
     hostPath:
       path: /var/run/docker.sock
