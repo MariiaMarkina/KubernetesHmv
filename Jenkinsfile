@@ -54,6 +54,8 @@ spec:
                 sh 'npm install'
                 sh 'npm run build'
                 sh 'npm install -g serve'
+               // sh 'serve -s build'
+               // sh 'sleep 600'
                 }
                 }
         }
@@ -71,15 +73,13 @@ spec:
                     script {
                 //    docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                 //    dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
-                    docker.withRegistry('', registryCredential) 
+                    docker.withRegistry('https://registry.hub.docker.com/', registryCredential) 
                     dockerImage.push()
                     }
                 
-                        
                  
                 }
-                // sh 'serve -s build'
-               // sh 'sleep 600'
+
             }
         }
     }
