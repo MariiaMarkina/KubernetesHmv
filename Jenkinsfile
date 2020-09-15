@@ -5,7 +5,7 @@ pipeline {
         kubernetes {
             label 'build-service-pod'
             defaultContainer 'jnlp'
-            yaml '''
+            yaml """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -34,7 +34,7 @@ spec:
   - name: docker-sock
     hostPath:
       path: /var/run/docker.sock
-...
+"""
         }
     }
     options {
