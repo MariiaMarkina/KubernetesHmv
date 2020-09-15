@@ -62,7 +62,7 @@ spec:
         stage('create image') {
             steps { 
                 container('docker'){
-                    sh 'kubectl get pods --namespace=ci'   
+               //     sh 'kubectl get pods --namespace=ci'   
                     git 'http://github.com/MariiaMarkina/KubernetesHmv'
                     sh 'docker build -t mariiamarkina/devopshomework:kubepipeline /home/jenkins/agent/workspace/Homework'
                       withCredentials([usernamePassword(credentialsId: 'dockerhubCred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
