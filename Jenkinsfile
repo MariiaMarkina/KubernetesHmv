@@ -68,7 +68,7 @@ spec:
                     dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                     docker.withRegistry('', registryCredential) 
                     dockerImage.push()
-                  //}
+                    }
                 }
                 // sh 'serve -s build'
                // sh 'sleep 600'
