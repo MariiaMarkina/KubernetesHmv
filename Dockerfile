@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu
 MAINTAINER mariia markina <MariaMarkinaV@gmail.com>
 # RUN groupadd userapp && useradd --uid 2000 -g userapp -s /bin/bash -d / -m  --no-log-init userapp && echo "userapp:1111111" | chpasswd
 RUN apt-get update -y && apt-get upgrade -y && apt-get install openjdk-11-jdk -y && apt-get -y install wget && apt-get -y install sudo 
