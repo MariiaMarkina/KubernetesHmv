@@ -63,7 +63,7 @@ spec:
                     sh 'ls'
                     git 'http://github.com/MariiaMarkina/KubernetesHmv'
                     sh 'docker build -t mariiamarkina/devopshomework:kubepipeline /home/jenkins/agent/workspace/Homework'
-                    withDockerRegistry([ credentialsId: "dockerhubCred", url: "https://registry.hub.docker.com/" ]) {
+                    withDockerRegistry([ credentialsId: "dockerhubCred", url: "" ]) {
                     sh 'docker push  mariiamarkina/devopshomework:kubepipeline'
                     }
                         
