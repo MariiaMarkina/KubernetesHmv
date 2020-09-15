@@ -73,7 +73,7 @@ spec:
                     script {
                 //    docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                 //    dockerImagemy = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
-                    docker.withRegistry('https://registry.hub.docker.com/', registryCredential) 
+                    docker.withRegistry('https://registry.hub.docker.com/', dockerhubCred) 
                     dockerImage.push()
                     }
                 
