@@ -72,11 +72,13 @@ spec:
                // sh 'apt-cache policy docker-engine'
                // sh 'apt-get install -y docker.io'
               //  sh 'hello?'
-                script {
-                  dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '.')
-                  docker.withRegistry('', registryCredential) 
-                  dockerImage.push()
-                }
+                  sh 'docker pull ubuntu'
+                  sh 'docker images'
+               // script {
+                //  dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '.')
+                //  docker.withRegistry('', registryCredential) 
+                 // dockerImage.push()
+               // }
                 }
                 // sh 'serve -s build'
                // sh 'sleep 600'
