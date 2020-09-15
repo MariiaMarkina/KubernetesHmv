@@ -65,7 +65,7 @@ spec:
                 container('docker'){
                   git 'http://github.com/MariiaMarkina/KubernetesHmv'
               //    sh 'docker ps'
-                  sh 'sleep 3000'
+                //  sh 'sleep 3000'
                   script {
                     dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/home/jenkins/agent/workspace/Homework/')
                     docker.withRegistry('', registryCredential) 
