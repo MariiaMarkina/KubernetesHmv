@@ -4,5 +4,5 @@ MAINTAINER mariia markina <MariaMarkinaV@gmail.com>
 #COPY ./build/* /var/www/html/
 #CMD ["nginx", "-g", "daemon off;"]
 RUN apt-get update && apt install -y nodejs && apt-get install -y npm && npm install -g serve 
-COPY ./build/* /build/
+COPY ./* /build/
 ENTRYPOINT serve -s build
