@@ -1,10 +1,12 @@
 // Uses Declarative syntax to run commands inside a container.
-pipeline {
 environment {
   registry = "mariiamarkina/devopshomework"
   registryCredential = 'dockerhubCred'
   dockerImage = ""
-  }    
+  }
+
+pipeline {
+    
 agent {
         kubernetes {
             label 'build-service-pod'
