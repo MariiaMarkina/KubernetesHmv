@@ -5,7 +5,7 @@ pipeline {
         kubernetes {
             label 'build-service-pod'
             defaultContainer 'jnlp'
-            yaml ...
+            yaml '''
 apiVersion: v1
 kind: Pod
 metadata:
