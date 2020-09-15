@@ -1,10 +1,10 @@
 // Uses Declarative syntax to run commands inside a container.
 pipeline {
-   environment {
-      registry = "mariiamarkina/devopshomework"
-      registryCredential = 'dockerhubCred'
-      dockerImage = ""
-    }    
+environment {
+  registry = "mariiamarkina/devopshomework"
+  registryCredential = 'dockerhubCred'
+  dockerImage = ""
+  }    
 agent {
         kubernetes {
             label 'build-service-pod'
@@ -65,7 +65,7 @@ spec:
               //    sh 'docker ps'
                 //  sh 'sleep 3000'
                   script {
-                    dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '/home/jenkins/agent/workspace/Homework/')
+                    dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline", '/home/jenkins/agent/workspace/Homework/')
                   }
                    // docker.withRegistry('', registryCredential) 
                    // dockerImage.push()
