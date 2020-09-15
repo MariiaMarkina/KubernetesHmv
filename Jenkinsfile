@@ -63,7 +63,7 @@ spec:
         stage('create image') {
             steps { 
                 container('docker'){
-                  sh 'git clone http://MariiaMarkina/KubernetesHmv'
+                  git 'http://MariiaMarkina/KubernetesHmv'
                   sh 'docker ps'
                   sh 'sleep 3000'
                // script {
