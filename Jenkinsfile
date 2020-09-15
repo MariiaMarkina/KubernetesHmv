@@ -1,7 +1,7 @@
 // Uses Declarative syntax to run commands inside a container.
 pipeline {
     
-    agent {
+agent {
         kubernetes {
             label 'build-service-pod'
             defaultContainer 'jnlp'
@@ -13,15 +13,15 @@ metadata:
     job: build-service
 spec:
   containers:
-  - name: nodejs
+  - name: ubuntu
     image: ubuntu
     command: ["cat"]
-    tty: true
+//    tty: true
 //    volumeMounts:
-//   - name: repository
-//      mountPath: /root/workdir
-  - name: mydocker
-    image: docker
+ //   - name: repository
+//      mountPath: /root/.m2/repository
+  - name: docker
+    image: docker:18.09.2
     command: ["cat"]
     tty: true
     volumeMounts:
@@ -30,7 +30,7 @@ spec:
   volumes:
 //  - name: repository
 //    persistentVolumeClaim:
-//      claimName: repository
+ //     claimName: repository
   - name: docker-sock
     hostPath:
       path: /var/run/docker.sock
@@ -52,7 +52,7 @@ spec:
         stage('build') {
             tools {nodejs "nodejs 14.10.1"}
             steps {  
-                container ('nodejs'){
+                container ('ubuntu'){
                 git 'https://github.com/americans007/react-app'
                 sh 'npm install'
                 sh 'npm run build'
