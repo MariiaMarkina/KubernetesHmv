@@ -62,8 +62,8 @@ spec:
         }
         stage('create image') {
             steps { 
-                container('mydocker'){
-                sh 'apt-get update'
+                container('docker'){
+              //  sh 'apt-get update'
               //  sh 'apt-get install -y gnupg'
                // sh 'apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D'
               //  sh 'apt install -y software-properties-common'
