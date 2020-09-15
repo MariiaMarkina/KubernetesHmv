@@ -1,5 +1,5 @@
 FROM ubuntu
 MAINTAINER mariia markina <MariaMarkinaV@gmail.com>
-COPY /* /
+COPY ./* /
 RUN npm install -g serve
 ENTRYPOINT serve -s build
