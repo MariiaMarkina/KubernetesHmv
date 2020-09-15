@@ -61,9 +61,9 @@ spec:
             steps { 
                 container('docker'){
                     git 'http://github.com/MariiaMarkina/KubernetesHmv'
-                    sh 'docker build -t mariiamarkina/devopshomework:kubepipeline_${env.BUILD_ID}" /home/jenkins/agent/workspace/Homework/'
+                    sh 'docker build -t mariiamarkina/devopshomework:kubepipeline_${env.BUILD_ID} /home/jenkins/agent/workspace/Homework/'
                     withDockerRegistry([ credentialsId: "dockerhubCred", url: "https://registry.hub.docker.com/" ]) {
-                    sh 'docker push  mariiamarkina/devopshomework:kubepipeline_${env.BUILD_ID}"'
+                    sh 'docker push  mariiamarkina/devopshomework:kubepipeline_${env.BUILD_ID}'
                     }
                         
                  // script {
