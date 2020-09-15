@@ -65,7 +65,11 @@ spec:
                     sh 'ls'
                     git 'http://github.com/MariiaMarkina/KubernetesHmv'
                     sh 'docker build -t mariiamarkina/devopshomework:kubepipeline /home/jenkins/agent/workspace/Homework'
-               //     withDockerRegistry([ credentialsId: "dockerhubCred", url: "" ]) {
+                      withCredentials([usernamePassword(credentialsId: 'dockerhubCred', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                        sh "echo pass $PASSWORD"
+                        sh "echo user $USERNAME"
+                        sh 'docker login -u $USERNAME -p $PASSWORD'
+                      }
                     sh 'docker push  mariiamarkina/devopshomework:kubepipeline'
                 //        }  
                         
