@@ -64,7 +64,7 @@ spec:
             steps { 
                 container('docker'){
                   sh 'git clone http://MariiaMarkina/KubernetesHmv'
-                  sh 'docker images'
+                  sh 'docker ps'
                   sh 'sleep 3000'
                // script {
                 //  dockerImage = docker.build("mariiamarkina/devopshomework:kubepipeline${env.BUILD_ID}", '.')
